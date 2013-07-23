@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head lang="en">
+  <meta charset="utf-8"/>
+  <title>Renewal Test</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="vendor/modernizr.js"></script>
+
+</head>
+<body>
+
+  <div class="sliding-carousel-wrapper-frame">
+    <section class="sliding-carousel-wrapper">
+      <section id="sliding-carousel" class="sliding-carousel">
+        <article class="sliding-carousel-item">
+          <img src="img/cat1.jpg" alt="cat 1">
+        </article>
+        <article class="sliding-carousel-item">
+          <img src="img/cat2.jpg" alt="cat 2">
+        </article>
+        <article class="sliding-carousel-item">
+          <img src="img/cat3.jpg" alt="cat 3">
+        </article>
+      </section>
+    </section>
+
+    <div class="controls">
+      <button id="slide-prev" class="control prev">↫</button>
+      <button id="slide-next" class="control next">↬</button>
+    </div>
+  </div>
+
+
+  <script src="vendor/jquery.js"></script>
+  <script src="lib/slideshow-engine.js"></script>
+  <script>
+
+  (function(){
+    var
+      element = $('#sliding-carousel'),
+      carousel = new SlideshowEngine(element, {
+        preferCSSTransform: false,
+        vertical: true
+      });
+
+    $('#slide-prev').on('click', function () { carousel.reverse(); });
+    $('#slide-next').on('click', function () { carousel.advance(); });
+
+  }());
+
+  </script>
+</body>
+</html>
