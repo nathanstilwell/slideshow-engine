@@ -40,7 +40,7 @@
       element = $('#sliding-carousel'),
       carousel = new SlideshowEngine(element, {
         preferCSSTransform: false,
-        vertical: true
+        extraWideContainer: true
       });
 
     $('#slide-prev').on('click', function () { carousel.reverse(); });
